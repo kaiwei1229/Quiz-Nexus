@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Nexus - 一般模式</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+body {
+    padding: 2rem;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(145deg, rgba(26, 0, 51, 0.8), rgba(15, 0, 32, 0.8));
+    border: 2px solid #8b2bdc;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(138, 43, 220, 0.4);
+}
+
+.game-title {
+    font-size: 2em;
+}
+
+.game-stats {
+    display: flex;
+    gap: 3rem;
+    font-size: 1.2em;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9em;
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    color: #ff00ff;
+    font-size: 1.5em;
+    font-weight: 700;
+    text-shadow: 0 0 15px #ff00ff;
+}
+
+#timer-bar {
+    margin-bottom: 2rem;
+}
+
+.question-card {
+    margin-bottom: 2rem;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.question-card.show {
+    opacity: 1;
+    animation: fade-in 0.5s ease-out;
+}
+
+.question-category {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: linear-gradient(135deg, #8b2bdc, #ff00ff);
+    border-radius: 20px;
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 20px rgba(138, 43, 220, 0.6);
+}
+
+.question-text {
+    font-size: 1.8em;
+    line-height: 1.6;
+    color: #ffffff;
+    margin-top: 1.5rem;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.options-grid.show {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    animation: fade-in 0.5s ease-out;
+}
+
+.btn-choice {
+    font-family: 'Microsoft JhengHei', sans-serif;
+}
+
+/* 問題計數器 */
+.question-counter {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5em;
+    font-weight: 900;
+    background: linear-gradient(135deg, #8b2bdc, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 40px rgba(138, 43, 220, 0.8);
+    opacity: 0;
+    z-index: 999;
+    letter-spacing: 5px;
+    pointer-events: none;
+}
+
+.question-counter.show {
+    animation: counter-fade 2s ease-in-out forwards;
+}
+
+@keyframes counter-fade {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 手機版 RWD */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+    
+    .container {
+        width: 100%;
+    }
+    
+    .game-header {
+        flex-direction: row;
+        gap: 0.5rem;
+        padding: 0.6rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .game-title {
+        font-size: 1em;
+        white-space: nowrap;
+    }
+    
+    .game-stats {
+        gap: 0.8rem;
+        font-size: 0.85em;
+    }
+    
+    .stat-label {
+        font-size: 0.75em;
+        margin-bottom: 0.2rem;
+    }
+    
+    .stat-value {
+        font-size: 1em;
+    }
+    
+    #timer-bar {
+        margin-bottom: 0.8rem;
+    }
+    
+    .question-card {
+        margin-bottom: 0.8rem;
+        padding: 0.8rem;
+    }
+    
+    .question-text {
+        font-size: 1em;
+        line-height: 1.4;
+        margin-top: 0.5rem;
+    }
+    
+    .question-category {
+        font-size: 0.75em;
+        padding: 0.3rem 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .options-grid {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+        margin-top: 0.8rem;
+    }
+    
+    .btn-choice {
+        padding: 0.8rem;
+        font-size: 0.9em;
+    }
+    
+    .question-counter {
+        font-size: 2.5em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding: 0.3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+    
+    .game-header {
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .game-title {
+        font-size: 0.9em;
+    }
+    
+    .game-stats {
+        gap: 0.6rem;
+        font-size: 0.75em;
+    }
+    
+    .stat-label {
+        font-size: 0.7em;
+    }
+    
+    .stat-value {
+        font-size: 0.95em;
+    }
+    
+    #timer-bar {
+        margin-bottom: 0.5rem;
+    }
+    
+    .question-card {
+        margin-bottom: 0.5rem;
+        padding: 0.6rem;
+    }
+    
+    .question-text {
+        font-size: 0.9em;
+        line-height: 1.3;
+        margin-top: 0.4rem;
+    }
+    
+    .question-category {
+        font-size: 0.7em;
+        padding: 0.25rem 0.6rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .options-grid {
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+    }
+    
+    .btn-choice {
+        padding: 0.7rem;
+        font-size: 0.85em;
+    }
+    
+    .question-counter {
+        font-size: 2em;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="game-header">
+        <h2 class="game-title" id="mode-title">🎮 一般模式</h2>
+        <div class="game-stats">
+            <div class="stat-item">
+                <div class="stat-label">分數</div>
+                <div class="stat-value" id="score">0</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">倒數計時</div>
+                <div class="stat-value" id="time">10</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="timer-bar">
+        <div id="timer-inner"></div>
+    </div>
+
+    <div class="card question-card">
+        <div class="question-category" id="q-category">載入中...</div>
+        <div class="question-text" id="q-text">正在載入題目...</div>
+    </div>
+
+    <div class="question-counter" id="question-counter"></div>
+    
+    <div class="options-grid" id="options-grid">
+        <button id="opt-0" class="btn-choice"></button>
+        <button id="opt-1" class="btn-choice"></button>
+        <button id="opt-2" class="btn-choice"></button>
+        <button id="opt-3" class="btn-choice"></button>
+    </div>
+</div>
+
+<script src="js/questions.js"></script>
+<script src="js/quiz_core.js"></script>
+<script src="js/quiz_normal.js"></script>
+
+<script src="js/bgm.js"></script>
+<script>
+setupAutoPlay();
+playGameBGM();
+// 依選單設定更新模式標題
+const cat = localStorage.getItem('gameCategory');
+const titleEl = document.getElementById('mode-title');
+if (cat) {
+    titleEl.textContent = `🏷️ 主題模式 - ${cat}`;
+} else {
+    titleEl.textContent = '🎮 一般模式';
+}
+</script>
+
+</body>
+</html>
