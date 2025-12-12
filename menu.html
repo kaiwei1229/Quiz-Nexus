@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Nexus - Menu</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.menu-container {
+    max-width: 900px;
+    width: 100%;
+    animation: fade-in 1s ease-out;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.menu-title h1 {
+    font-size: 4em;
+    margin-bottom: 1rem;
+    animation: title-pulse 2s ease-in-out infinite;
+}
+
+@keyframes title-pulse {
+    0%, 100% {
+        filter: drop-shadow(0 0 20px rgba(255, 0, 255, 0.6));
+    }
+    50% {
+        filter: drop-shadow(0 0 40px rgba(255, 0, 255, 1));
+    }
+}
+
+.menu-subtitle {
+    color: #00ffff;
+    font-size: 1.5em;
+    text-shadow: 0 0 20px #00ffff;
+    letter-spacing: 3px;
+}
+
+/* 遊戲設定區域 */
+.game-settings {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(145deg, rgba(26, 0, 51, 0.95), rgba(15, 0, 32, 0.95));
+    border: 2px solid #8b2bdc;
+    border-radius: 20px;
+    box-shadow: 
+        0 0 30px rgba(138, 43, 220, 0.4),
+        inset 0 0 30px rgba(138, 43, 220, 0.1);
+}
+
+.setting-group {
+    margin-bottom: 2rem;
+}
+
+.setting-group:last-child {
+    margin-bottom: 0;
+}
+
+.setting-label {
+    font-size: 1.3em;
+    color: #ff00ff;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 15px #ff00ff;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.setting-options {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.option-btn {
+    padding: 1rem 2rem;
+    background: linear-gradient(145deg, rgba(26, 0, 51, 0.8), rgba(45, 0, 80, 0.8));
+    border: 2px solid #8b2bdc;
+    color: #00ffff;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(138, 43, 220, 0.3);
+    letter-spacing: 1px;
+}
+
+.option-btn:hover {
+    border-color: #ff00ff;
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.6);
+    transform: translateY(-3px);
+}
+
+.option-btn.selected {
+    background: linear-gradient(135deg, #8b2bdc, #ff00ff);
+    border-color: #ff00ff;
+    box-shadow: 0 0 40px rgba(255, 0, 255, 0.8);
+    transform: scale(1.05);
+}
+
+.mode-selection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.mode-card {
+    background: linear-gradient(145deg, rgba(26, 0, 51, 0.95), rgba(15, 0, 32, 0.95));
+    border: 3px solid #8b2bdc;
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+    box-shadow: 
+        0 0 40px rgba(138, 43, 220, 0.4),
+        inset 0 0 40px rgba(138, 43, 220, 0.1);
+}
+
+.mode-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(138, 43, 220, 0.3) 0%, transparent 70%);
+    animation: rotate-gradient 4s linear infinite;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.mode-card:hover::before {
+    opacity: 1;
+}
+
+@keyframes rotate-gradient {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.mode-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: #ff00ff;
+    box-shadow: 
+        0 0 60px rgba(255, 0, 255, 0.8),
+        inset 0 0 60px rgba(255, 0, 255, 0.2);
+}
+
+.mode-icon {
+    font-size: 5em;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 0 20px currentColor);
+    animation: icon-float 3s ease-in-out infinite;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes icon-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.mode-card:nth-child(1) .mode-icon {
+    color: #ff00ff;
+}
+
+.mode-card:nth-child(2) .mode-icon {
+    color: #00ffff;
+}
+
+.mode-title {
+    font-size: 2em;
+    color: #00ffff;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px currentColor;
+    position: relative;
+    z-index: 1;
+}
+
+.mode-card:nth-child(1) .mode-title {
+    color: #ff00ff;
+}
+
+.mode-description {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1em;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+/* 電路線條裝飾 */
+.circuit-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #8b2bdc, transparent);
+    box-shadow: 0 0 10px #8b2bdc;
+    animation: circuit-pulse 2s ease-in-out infinite;
+}
+
+.circuit-line.top {
+    top: 30%;
+    animation-delay: 0s;
+}
+
+.circuit-line.bottom {
+    bottom: 30%;
+    animation-delay: 1s;
+}
+
+@keyframes circuit-pulse {
+    0%, 100% {
+        opacity: 0.3;
+        box-shadow: 0 0 10px #8b2bdc;
+    }
+    50% {
+        opacity: 1;
+        box-shadow: 0 0 20px #8b2bdc, 0 0 40px #8b2bdc;
+    }
+}
+
+/* 粒子背景 */
+.particles-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.bg-particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #8b2bdc;
+    border-radius: 50%;
+    animation: particle-move 8s linear infinite;
+    box-shadow: 0 0 10px #8b2bdc;
+}
+
+@keyframes particle-move {
+    0% {
+        transform: translate(0, 100vh) scale(0);
+        opacity: 0;
+    }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% {
+        transform: translate(50px, -50px) scale(1);
+        opacity: 0;
+    }
+}
+
+/* 手機版 RWD */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 0.5rem;
+    }
+    
+    .menu-container {
+        padding: 0;
+    }
+    
+    .menu-title {
+        margin-bottom: 1.5rem;
+    }
+    
+    .menu-title h1 {
+        font-size: 1.8em;
+        margin-bottom: 0.5rem;
+    }
+    
+    .menu-subtitle {
+        font-size: 0.9em;
+        letter-spacing: 1px;
+    }
+    
+    .game-settings {
+        padding: 1rem;
+        margin: 1.5rem 0;
+    }
+    
+    .setting-group {
+        margin-bottom: 1.2rem;
+    }
+    
+    .setting-label {
+        font-size: 0.95em;
+        margin-bottom: 0.6rem;
+    }
+    
+    .setting-options {
+        gap: 0.5rem;
+    }
+    
+    .option-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.85em;
+    }
+    
+    .mode-selection {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .mode-card {
+        padding: 1.2rem 1rem;
+    }
+    
+    .mode-icon {
+        font-size: 2.5em;
+        margin-bottom: 0.8rem;
+    }
+    
+    .mode-title {
+        font-size: 1.2em;
+        margin-bottom: 0.3rem;
+    }
+    
+    .mode-description {
+        font-size: 0.85em;
+        line-height: 1.4;
+    }
+    
+    .circuit-line {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding: 0.3rem;
+    }
+    
+    .menu-title {
+        margin-bottom: 1rem;
+    }
+    
+    .menu-title h1 {
+        font-size: 1.5em;
+        margin-bottom: 0.3rem;
+    }
+    
+    .menu-subtitle {
+        font-size: 0.8em;
+        letter-spacing: 0.5px;
+    }
+    
+    .game-settings {
+        padding: 0.8rem;
+        margin: 1rem 0;
+    }
+    
+    .setting-group {
+        margin-bottom: 1rem;
+    }
+    
+    .setting-label {
+        font-size: 0.85em;
+        margin-bottom: 0.5rem;
+    }
+    
+    .setting-options {
+        gap: 0.4rem;
+    }
+    
+    .option-btn {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8em;
+    }
+    
+    .mode-selection {
+        gap: 0.8rem;
+    }
+    
+    .mode-card {
+        padding: 1rem 0.8rem;
+    }
+    
+    .mode-icon {
+        font-size: 2em;
+        margin-bottom: 0.6rem;
+    }
+    
+    .mode-title {
+        font-size: 1.1em;
+        margin-bottom: 0.2rem;
+    }
+    
+    .mode-description {
+        font-size: 0.8em;
+        line-height: 1.3;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="particles-bg" id="particlesBg"></div>
+
+<div class="menu-container">
+    <div class="menu-title">
+        <h1>Quiz Nexus</h1>
+        <div class="menu-subtitle">▶ 遊戲設定 ◀</div>
+    </div>
+
+    <div class="game-settings">
+        <div class="setting-group">
+            <div class="setting-label">題目數量</div>
+            <div class="setting-options">
+                <button class="option-btn" data-questions="5">5 題</button>
+                <button class="option-btn selected" data-questions="7">7 題</button>
+                <button class="option-btn" data-questions="9">9 題</button>
+            </div>
+        </div>
+
+        <div class="setting-group">
+            <div class="setting-label">作答時間</div>
+            <div class="setting-options">
+                <button class="option-btn" data-time="3">3 秒</button>
+                <button class="option-btn selected" data-time="5">5 秒</button>
+                <button class="option-btn" data-time="7">7 秒</button>
+                <button class="option-btn" data-time="9">9 秒</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-title">
+        <div class="menu-subtitle" style="margin-top: 2rem;">▶ 選擇遊戲模式 ◀</div>
+    </div>
+
+    <div class="mode-selection">
+        <a href="#" class="mode-card" id="normalMode">
+            <div class="circuit-line top"></div>
+            <div class="mode-icon">👆</div>
+            <div class="mode-title">一般模式</div>
+            <div class="mode-description">
+                經典隨機主題<br>
+                熟悉操作 快速反應
+            </div>
+            <div class="circuit-line bottom"></div>
+        </a>
+
+        <!-- 語音模式已移除 -->
+    </div>
+</div>
+
+<script src="js/bgm.js"></script>
+<script src="js/questions.js"></script>
+<script>
+// 創建背景粒子
+function createBgParticles() {
+    const container = document.getElementById('particlesBg');
+    for (let i = 0; i < 40; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'bg-particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 8 + 's';
+        particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+        container.appendChild(particle);
+    }
+}
+
+createBgParticles();
+
+// 初始化音樂
+setupAutoPlay();
+playMenuBGM();
+
+// 遊戲設定
+let selectedQuestions = 7;
+let selectedTime = 5;
+
+// 選項按鈕事件
+document.querySelectorAll('.option-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        // 移除同組的選中狀態
+        const group = this.parentElement;
+        group.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+        
+        // 設定當前按鈕為選中
+        this.classList.add('selected');
+        
+        // 更新設定值
+        if (this.dataset.questions) {
+            selectedQuestions = parseInt(this.dataset.questions);
+        }
+        if (this.dataset.time) {
+            selectedTime = parseInt(this.dataset.time);
+        }
+    });
+});
+
+// 模式卡片點擊事件
+// 頁面淡入淡出動畫樣式
+const styleFade = document.createElement('style');
+styleFade.textContent = `
+    @keyframes page-fade-in { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes page-fade-out { from { opacity: 1; } to { opacity: 0; } }
+    body { animation: page-fade-in 400ms ease-out; }
+    .page-fade-out { animation: page-fade-out 350ms ease-in forwards; }
+    .overlay-show { opacity: 1; }
+`;
+document.head.appendChild(styleFade);
+
+document.getElementById('normalMode').addEventListener('click', function(e) {
+    e.preventDefault();
+    localStorage.setItem('gameQuestions', selectedQuestions);
+    localStorage.setItem('gameTime', selectedTime);
+    localStorage.removeItem('gameCategory');
+    document.body.classList.add('page-fade-out');
+    setTimeout(() => { window.location.href = 'quiz_normal.html'; }, 350);
+});
+
+// 新增主題模式卡片（保持既有卡片）
+const modeSelection = document.querySelector('.mode-selection');
+if (!document.getElementById('themeMode')) {
+    const themeCard = document.createElement('a');
+    themeCard.href = '#';
+    themeCard.className = 'mode-card';
+    themeCard.id = 'themeMode';
+    themeCard.innerHTML = `
+        <div class="circuit-line top"></div>
+        <div class="mode-icon">🏷️</div>
+        <div class="mode-title">主題模式</div>
+        <div class="mode-description">
+            指定特定主題<br>
+            聚焦練習 精準挑戰
+        </div>
+        <div class="circuit-line bottom"></div>
+    `;
+    modeSelection.appendChild(themeCard);
+}
+
+// 改為點擊主題模式後才顯示選單彈窗
+document.getElementById('themeMode').addEventListener('click', function(e) {
+    e.preventDefault();
+    // 建立遮罩與彈窗（若尚未建立）
+    let overlay = document.getElementById('theme-overlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.id = 'theme-overlay';
+        overlay.style.cssText = `position:fixed;inset:0;background:rgba(10,10,20,0.8);opacity:0;transition:opacity 250ms ease;display:flex;align-items:center;justify-content:center;z-index:10000;`;
+        const modal = document.createElement('div');
+        modal.id = 'theme-modal';
+        modal.style.cssText = `background:linear-gradient(145deg, rgba(26,0,51,0.95), rgba(15,0,32,0.95));border:2px solid #8b2bdc;border-radius:16px;padding:1.5rem;width:min(90vw,520px);box-shadow:0 0 40px rgba(138,43,220,0.6);transform:translateY(10px);opacity:0;transition:opacity 250ms ease, transform 250ms ease;`;
+        modal.innerHTML = `
+            <div style="text-align:center; margin-bottom:1rem;">
+                <div style="color:#00ffff; font-size:1.6em; text-shadow:0 0 20px #00ffff;">選擇主題分類</div>
+                <div style="color:rgba(255,255,255,0.75); font-size:0.95em; margin-top:0.25rem;">選擇後將進入主題模式</div>
+            </div>
+            <div id="theme-options" style="display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:center;"></div>
+            <div style="text-align:center; margin-top:1rem;">
+                <button id="theme-cancel" class="option-btn" style="padding:0.6rem 1.2rem;">取消</button>
+            </div>
+        `;
+        overlay.appendChild(modal);
+        document.body.appendChild(overlay);
+        document.getElementById('theme-cancel').addEventListener('click', () => {
+            overlay.style.opacity = '0';
+            setTimeout(() => overlay.remove(), 250);
+        });
+    }
+    const container = document.getElementById('theme-options');
+    container.innerHTML = '';
+    const categories = Array.from(new Set(QUESTIONS.map(q => q.category)));
+    categories.forEach(cat => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.textContent = cat;
+        btn.addEventListener('click', () => {
+            localStorage.setItem('gameQuestions', selectedQuestions);
+            localStorage.setItem('gameTime', selectedTime);
+            localStorage.setItem('gameCategory', cat);
+            // 整個頁面淡出，再進入遊戲
+            overlay.style.opacity = '0';
+            document.body.classList.add('page-fade-out');
+            setTimeout(() => { window.location.href = 'quiz_normal.html'; }, 350);
+        });
+        container.appendChild(btn);
+    });
+    // 淡入遮罩與彈窗（用 rAF 確保 transition 生效）
+    requestAnimationFrame(() => {
+        overlay.style.opacity = '1';
+        const modalEl = document.getElementById('theme-modal');
+        modalEl.style.opacity = '1';
+        modalEl.style.transform = 'translateY(0)';
+    });
+});
+</script>
+
+</body>
+</html>
