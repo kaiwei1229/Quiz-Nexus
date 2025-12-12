@@ -1184,5 +1184,671 @@ const QUESTIONS = [
         question: "Which sentence describes a future plan?",
         options: ["I go to Japan last year.", "I am going to Japan next week.", "I go to Japan every day.", "I going to Japan yesterday."],
         answer: 1
+    },
+
+    // 193–204 醫療 Medical
+    {
+        category: "醫療",
+        question: "人體的哪個器官負責將血液中的毒素轉化並排出？",
+        options: ["心臟", "肝臟", "肺臟", "腎臟"],
+        answer: 1
+    },
+    {
+        category: "醫療",
+        question: "感冒主要是由什麼引起？",
+        options: ["細菌", "病毒", "寄生蟲", "黴菌"],
+        answer: 1
+    },
+    {
+        category: "醫療",
+        question: "CPR（心肺復甦術）最重要的步驟之一是？",
+        options: ["拍背", "按壓胸部", "拉耳朵", "捏鼻子"],
+        answer: 1
+    },
+    {
+        category: "醫療",
+        question: "以下哪一項不是中暑的典型症狀？",
+        options: ["頭痛", "噁心", "大量出汗停止", "體溫下降到 35 度以下"],
+        answer: 3
+    },
+    {
+        category: "醫療",
+        question: "提升免疫力最有效的方法之一是？",
+        options: ["熬夜", "均衡飲食與運動", "喝大量咖啡", "忽略壓力"],
+        answer: 1
+    },
+    {
+        category: "醫療",
+        question: "哪一種血壓值屬於正常範圍？",
+        options: ["180/120", "120/80", "160/100", "90/50 並出現暈眩"],
+        answer: 1
+    },
+    {
+        category: "醫療",
+        question: "糖尿病主要與什麼有關？",
+        options: ["胰島素功能異常", "肝臟發炎", "胃酸過多", "腎臟結石"],
+        answer: 0
+    },
+    {
+        category: "醫療",
+        question: "食物中毒的第一步應對方式是？",
+        options: ["大量喝酒消毒", "先休息並補充水分", "立刻吃止痛藥", "等待症狀自行消失"],
+        answer: 1
+    },
+    {
+        category: "醫療",
+        question: "視力退化時，以下哪項是錯誤的做法？",
+        options: ["保持良好用眼距離", "就醫檢查", "長時間黑暗中看手機", "適度休息眼睛"],
+        answer: 2
+    },
+    {
+        category: "醫療",
+        question: "吸菸最容易造成下列哪種疾病？",
+        options: ["骨折", "肺癌", "闌尾炎", "白內障"],
+        answer: 1
+    },
+    {
+        category: "醫療",
+        question: "每年建議接種流感疫苗的原因是？",
+        options: ["病毒每年變化", "疫苗保存期限短", "補充維他命", "避免過敏"],
+        answer: 0
+    },
+    {
+        category: "醫療",
+        question: "缺乏維生素 D 可能導致？",
+        options: ["貧血", "骨質疏鬆", "高血壓", "聽力下降"],
+        answer: 1
+    },
+
+    // 205–216 法律 Legal
+    {
+        category: "法律",
+        question: "未成年飲酒在多數國家屬於？",
+        options: ["合法", "不鼓勵但合法", "違法行為", "僅限特殊節日可喝"],
+        answer: 2
+    },
+    {
+        category: "法律",
+        question: "下列哪一項屬於侵犯著作權？",
+        options: ["自己畫圖", "購買正版商品", "未經允許分享付費音樂", "拍攝自然風景"],
+        answer: 2
+    },
+    {
+        category: "法律",
+        question: "發生交通事故後應優先做什麼？",
+        options: ["離開現場", "先報警並確認安全", "立即責怪對方", "拍照後離開"],
+        answer: 1
+    },
+    {
+        category: "法律",
+        question: "下列哪項個資屬於敏感資料？",
+        options: ["暱稱", "興趣", "宗教信仰", "喜歡的食物"],
+        answer: 2
+    },
+    {
+        category: "法律",
+        question: "網路上散布未查證的謠言可能觸犯？",
+        options: ["誹謗罪", "殺人罪", "逃漏稅罪", "恐嚇罪"],
+        answer: 0
+    },
+    {
+        category: "法律",
+        question: "以下哪一項行為屬於合法？",
+        options: ["闖紅燈但沒被抓到", "使用盜版軟體", "尊重他人肖像權", "造謠攻擊他人"],
+        answer: 2
+    },
+    {
+        category: "法律",
+        question: "工作場合，雇主管理員工時不得？",
+        options: ["提供勞保", "要求加班但不給加班費", "提供教育訓練", "給予休假"],
+        answer: 1
+    },
+    {
+        category: "法律",
+        question: "在公共場合錄音錄影時須注意？",
+        options: ["不得侵犯他人隱私或肖像權", "禁止使用手機", "一定要模糊所有人", "不可拍攝建築物"],
+        answer: 0
+    },
+    {
+        category: "法律",
+        question: "網購 7 日鑑賞期的精神是？",
+        options: ["任何情況都能退貨", "商品需保持全新可還原", "只限退換衣服", "只能退換電腦"],
+        answer: 1
+    },
+    {
+        category: "法律",
+        question: "若收到詐騙電話，最正確的行為是？",
+        options: ["與對方聊久一點", "立刻提供資料以免帳號關閉", "掛斷電話並主動查證", "按他說的操作 ATM"],
+        answer: 2
+    },
+    {
+        category: "法律",
+        question: "上傳朋友照片前最重要的是？",
+        options: ["修圖", "先徵得本人同意", "加濾鏡", "標記更多人"],
+        answer: 1
+    },
+    {
+        category: "法律",
+        question: "公共場合吸菸可能違反？",
+        options: ["勞基法", "道路交通法", "菸害防制法", "著作權法"],
+        answer: 2
+    },
+    
+    // 217–228 社會議題 Social Issues
+    {
+        category: "社會議題",
+        question: "人口老化帶來的最大挑戰之一是？",
+        options: ["交通壅塞", "勞動力不足", "飲食習慣改變", "科技進步變慢"],
+        answer: 1
+    },
+    {
+        category: "社會議題",
+        question: "性別平等的核心精神是？",
+        options: ["男性優先", "女性優先", "不論性別皆應享有平等權利", "依年齡分配權利"],
+        answer: 2
+    },
+    {
+        category: "社會議題",
+        question: "下列哪一項屬於數位落差的現象？",
+        options: ["不同族群使用科技能力差異大", "手機款式不同", "網路越來越快", "太多人玩遊戲"],
+        answer: 0
+    },
+    {
+        category: "社會議題",
+        question: "提升心理健康最重要的社會措施之一是？",
+        options: ["假新聞", "社會支持系統", "系統性霸凌", "減少聊天"],
+        answer: 1
+    },
+    {
+        category: "社會議題",
+        question: "永續發展的三大核心要素包括？",
+        options: ["科技、效率、速度", "環境、社會、經濟", "政治、軍事、文化", "學習、工作、娛樂"],
+        answer: 1
+    },
+    {
+        category: "社會議題",
+        question: "假新聞對社會的危害包括？",
+        options: ["促進理解", "提升信任感", "造成恐慌與錯誤決策", "增加娛樂效果"],
+        answer: 2
+    },
+    {
+        category: "社會議題",
+        question: "低碳生活的主要目的在於？",
+        options: ["增加交通量", "降低溫室氣體排放", "消耗更多能源", "推動更快的城市發展"],
+        answer: 1
+    },
+    {
+        category: "社會議題",
+        question: "友善校園政策強調？",
+        options: ["每個人都應被尊重與接納", "應該禁止所有討論", "只照顧成績好的學生", "鼓勵比賽勝負"],
+        answer: 0
+    },
+    {
+        category: "社會議題",
+        question: "提升社會安全感最有效的方法之一是？",
+        options: ["加強社區連結與互助", "不與鄰居往來", "完全依賴網路資訊", "盡量不出門"],
+        answer: 0
+    },
+    {
+        category: "社會議題",
+        question: "推動公共交通的主要目的是？",
+        options: ["增加塞車", "降低碳排並提升交通效率", "讓車更貴", "減少工作機會"],
+        answer: 1
+    },
+    {
+        category: "社會議題",
+        question: "何者屬於家庭暴力的範圍？",
+        options: ["父母提醒孩子早睡", "伴侶之間的肢體或精神虐待", "朋友之間的爭吵", "老師布置作業"],
+        answer: 1
+    },
+    {
+        category: "社會議題",
+        question: "假帳號與網路霸凌屬於什麼議題？",
+        options: ["數位倫理與社會問題", "醫療行為", "娛樂八卦", "金融政策"],
+        answer: 0
+    },
+
+    // 229–240 數位素養 Digital Literacy
+    {
+        category: "數位素養",
+        question: "Deepfake 的主要風險是什麼？",
+        options: ["改善畫質", "製造假影片與假新聞", "增加記憶體", "提升聲音品質"],
+        answer: 1
+    },
+    {
+        category: "數位素養",
+        question: "在網路上判斷資訊真偽最重要的是？",
+        options: ["看瀏覽量", "看朋友是否分享", "查證來源與可信度", "文章越長越可靠"],
+        answer: 2
+    },
+    {
+        category: "數位素養",
+        question: "下列哪一項屬於數位足跡？",
+        options: ["實體郵件", "你按過的讚與追蹤", "你吃過的食物", "你看過的風景"],
+        answer: 1
+    },
+    {
+        category: "數位素養",
+        question: "若收到可疑連結最安全的做法是？",
+        options: ["點開看看內容", "轉傳給朋友", "忽略或查證來源", "立即輸入帳密"],
+        answer: 2
+    },
+    {
+        category: "數位素養",
+        question: "以下哪一項可以減少假新聞散播？",
+        options: ["看到就轉傳", "只看標題", "查證後再分享", "使用匿名帳號"],
+        answer: 2
+    },
+    {
+        category: "數位素養",
+        question: "避免被演算法控制資訊的重要方式是？",
+        options: ["多元閱讀不同來源內容", "永遠不看新聞", "刪除所有帳號", "只看短影片"],
+        answer: 0
+    },
+    {
+        category: "數位素養",
+        question: "什麼是回音室效應（Echo Chamber）？",
+        options: ["聲音太大", "只接觸到與自己相同觀點的資訊", "聊天室太多", "麥克風壞掉"],
+        answer: 1
+    },
+    {
+        category: "數位素養",
+        question: "哪些行為不利於個資保護？",
+        options: ["密碼定期更換", "在公開社群曝露地址與電話", "使用雙重驗證", "避免陌生連結"],
+        answer: 1
+    },
+    {
+        category: "數位素養",
+        question: "何者為健康使用社群平台的方式？",
+        options: ["與他人比較外表", "過度依賴按讚數", "適度使用並休息", "每天使用10小時"],
+        answer: 2
+    },
+    {
+        category: "數位素養",
+        question: "以下哪個資訊最容易被濫用？",
+        options: ["身高", "星座", "身分證號碼", "喜歡的飲料"],
+        answer: 2
+    },
+    {
+        category: "數位素養",
+        question: "AI 生成內容需要注意什麼？",
+        options: ["不可檢查", "可能包含錯誤或偏見", "都是真實資訊", "不用經過查證"],
+        answer: 1
+    },
+    {
+        category: "數位素養",
+        question: "以下何種方式最可能造成隱私風險？",
+        options: ["在獨立房間自拍", "定位功能全開且公開", "關閉社群帳號", "設定好友可見"],
+        answer: 1
+    },
+
+    // 241–252 金融素養 Financial Literacy
+    {
+        category: "金融素養",
+        question: "信用卡的最低應繳金額代表？",
+        options: ["全部要繳清", "只繳最少，但會累積高額利息", "不用繳", "自動取消帳單"],
+        answer: 1
+    },
+    {
+        category: "金融素養",
+        question: "複利的意思是？",
+        options: ["只計算本金", "利息不變", "利滾利，越久越多", "利率越用越少"],
+        answer: 2
+    },
+    {
+        category: "金融素養",
+        question: "下列哪種行為最容易造成負債？",
+        options: ["制定預算", "衝動購物", "比較價格", "使用現金支付"],
+        answer: 1
+    },
+    {
+        category: "金融素養",
+        question: "詐騙投資常見的特徵是？",
+        options: ["保證高報酬低風險", "說明清楚風險", "合法金融機構發行", "資訊透明"],
+        answer: 0
+    },
+    {
+        category: "金融素養",
+        question: "以下哪一項屬於必要支出？",
+        options: ["房租", "奢侈品", "最新手機", "名牌衣服"],
+        answer: 0
+    },
+    {
+        category: "金融素養",
+        question: "若開始存錢最重要的原則是？",
+        options: ["量入為出", "先買想要的", "常借錢", "不做預算"],
+        answer: 0
+    },
+    {
+        category: "金融素養",
+        question: "分期付款最大的風險是？",
+        options: ["不會影響負債", "容易忽略總金額與利息", "保證免費", "信用越來越好"],
+        answer: 1
+    },
+    {
+        category: "金融素養",
+        question: "ETF 的特色是？",
+        options: ["極高風險", "分散投資較安全", "僅限富豪使用", "不合法"],
+        answer: 1
+    },
+    {
+        category: "金融素養",
+        question: "下列哪個行為能提升理財能力？",
+        options: ["定期記帳", "完全不看帳單", "亂投資", "只靠直覺"],
+        answer: 0
+    },
+    {
+        category: "金融素養",
+        question: "貸款利率越高代表？",
+        options: ["成本越高", "越賺錢", "越划算", "不影響還款"],
+        answer: 0
+    },
+    {
+        category: "金融素養",
+        question: "常見的金融詐騙手法不包括？",
+        options: ["假投資群組", "ATM 操作報稅退稅", "銀行主動打來要密碼", "官方 APP 推播通知"],
+        answer: 3
+    },
+    {
+        category: "金融素養",
+        question: "存款與投資的主要差異是？",
+        options: ["存款風險低，投資可能有報酬也可能虧損", "兩者完全一樣", "投資絕對會賺", "存款一定虧錢"],
+        answer: 0
+    },
+
+    // 253–264 資安基礎 Cybersecurity
+    {
+        category: "資安基礎",
+        question: "以下哪個密碼最安全？",
+        options: ["12345678", "password", "MyCat2024!", "生日+名字"],
+        answer: 2
+    },
+    {
+        category: "資安基礎",
+        question: "何者最可能是釣魚郵件？",
+        options: ["寄件人不明、要求點擊連結", "學校寄來的課程通知", "訂閱後收到的電子報", "你自己寄給自己"],
+        answer: 0
+    },
+    {
+        category: "資安基礎",
+        question: "使用公共 Wi-Fi 時最安全的做法是？",
+        options: ["登入銀行帳戶", "使用 VPN", "開所有自動登入", "傳送敏感資料"],
+        answer: 1
+    },
+    {
+        category: "資安基礎",
+        question: "以下哪個檔案名稱最可疑？",
+        options: ["report.pdf", "image.jpg", "invoice.exe", "slides.pptx"],
+        answer: 2
+    },
+    {
+        category: "資安基礎",
+        question: "什麼是雙重驗證（2FA）？",
+        options: ["兩個密碼", "多一層身份驗證以增加安全性", "兩個手機", "重複登入"],
+        answer: 1
+    },
+    {
+        category: "資安基礎",
+        question: "避免帳號被盜最有效方式之一是？",
+        options: ["共用密碼", "每個網站用不同密碼", "密碼寫在桌上", "只用生日當密碼"],
+        answer: 1
+    },
+    {
+        category: "資安基礎",
+        question: "勒索病毒（Ransomware）主要做什麼？",
+        options: ["強化電腦速度", "加密資料並要求付費解鎖", "清除垃圾檔案", "提升網路速度"],
+        answer: 1
+    },
+    {
+        category: "資安基礎",
+        question: "下載軟體最安全的方式是？",
+        options: ["不明來源", "朋友傳來的檔案", "官方網站或應用商店", "隨便的短網址"],
+        answer: 2
+    },
+    {
+        category: "資安基礎",
+        question: "以下何者最可能是木馬程式？",
+        options: ["免費破解版遊戲", "正版購買軟體", "校園教學平台", "政府網頁"],
+        answer: 0
+    },
+    {
+        category: "資安基礎",
+        question: "保護個人隱私最重要的觀念是？",
+        options: ["看到連結就點", "避免公開敏感個資", "密碼永遠不變", "誰要資料都提供"],
+        answer: 1
+    },
+    {
+        category: "資安基礎",
+        question: "收到簡訊說『帳戶異常請點此確認』時該怎麼做？",
+        options: ["立刻點連結", "打電話給簡訊中的電話", "忽略並自行查證官方來源", "輸入帳密"],
+        answer: 2
+    },
+    {
+        category: "資安基礎",
+        question: "資安威脅中，社交工程是指？",
+        options: ["駭客打程式攻擊", "透過心理操控讓人洩漏資訊", "手機當機", "網路連線變慢"],
+        answer: 1
+    },
+
+    // 265–276 自然環境 Environment
+    {
+        category: "自然環境",
+        question: "地球氣候變遷的主要原因之一是？",
+        options: ["月亮太亮", "溫室氣體排放增加", "海水變甜", "星星太多"],
+        answer: 1
+    },
+    {
+        category: "自然環境",
+        question: "保護生物多樣性的最佳方式是？",
+        options: ["破壞棲地", "避免過度捕撈", "增加汙染排放", "開發所有森林"],
+        answer: 1
+    },
+    {
+        category: "自然環境",
+        question: "海洋塑膠汙染主要來源是？",
+        options: ["自然生成", "工業廢棄物與人為垃圾", "海底火山", "雨水"],
+        answer: 1
+    },
+    {
+        category: "自然環境",
+        question: "節能減碳的方式不包括？",
+        options: ["搭乘大眾運輸", "關燈", "使用節能家電", "保持冷氣整天開著"],
+        answer: 3
+    },
+    {
+        category: "自然環境",
+        question: "地球上最大的碳吸收來源之一是？",
+        options: ["沙漠", "海洋", "都市", "高山"],
+        answer: 1
+    },
+    {
+        category: "自然環境",
+        question: "森林砍伐的直接後果是？",
+        options: ["增加生物多樣性", "加速土壤流失", "空氣更乾淨", "氣溫下降"],
+        answer: 1
+    },
+    {
+        category: "自然環境",
+        question: "珊瑚白化主要原因是？",
+        options: ["海水溫度升高", "陽光不足", "魚太多", "海水變甜"],
+        answer: 0
+    },
+    {
+        category: "自然環境",
+        question: "節水的有效方式是？",
+        options: ["縮短淋浴時間", "增加沖水量", "多次開關水龍頭", "讓水一直流著"],
+        answer: 0
+    },
+    {
+        category: "自然環境",
+        question: "何者是再生能源？",
+        options: ["石油", "天然氣", "太陽能", "煤炭"],
+        answer: 2
+    },
+    {
+        category: "自然環境",
+        question: "空氣汙染對人體最大影響是？",
+        options: ["肺部健康", "髮量增加", "變矮", "肌肉變硬"],
+        answer: 0
+    },
+    {
+        category: "自然環境",
+        question: "全球暖化會造成？",
+        options: ["海平面上升", "冬天變更冷但夏天不變", "陸地面積變大", "颱風減少到零"],
+        answer: 0
+    },
+    {
+        category: "自然環境",
+        question: "減少垃圾量的最佳策略是？",
+        options: ["丟更多垃圾", "源頭減量與回收", "任意丟棄", "把垃圾藏起來"],
+        answer: 1
+    },
+
+    // 277–288 科學知識 Science
+    {
+        category: "科學知識",
+        question: "地球自轉一圈大約需要多久？",
+        options: ["一小時", "一天", "一週", "一個月"],
+        answer: 1
+    },
+    {
+        category: "科學知識",
+        question: "哪種粒子帶負電？",
+        options: ["質子", "中子", "電子", "光子"],
+        answer: 2
+    },
+    {
+        category: "科學知識",
+        question: "水由液體變成氣體稱為？",
+        options: ["凝結", "蒸發", "升華", "沈降"],
+        answer: 1
+    },
+    {
+        category: "科學知識",
+        question: "人類呼吸所需的氣體是？",
+        options: ["二氧化碳", "氧氣", "氮氣", "氫氣"],
+        answer: 1
+    },
+    {
+        category: "科學知識",
+        question: "太陽屬於哪種類型的天體？",
+        options: ["行星", "恆星", "彗星", "小行星"],
+        answer: 1
+    },
+    {
+        category: "科學知識",
+        question: "聲音需要什麼才能傳播？",
+        options: ["真空", "介質（如空氣、水）", "黑洞", "光線"],
+        answer: 1
+    },
+    {
+        category: "科學知識",
+        question: "人體哪個器官負責泌尿系統的主要過濾？",
+        options: ["胃", "腎臟", "肝臟", "肺"],
+        answer: 1
+    },
+    {
+        category: "科學知識",
+        question: "下列哪種動物是哺乳類？",
+        options: ["螃蟹", "海豚", "青蛙", "企鵝"],
+        answer: 1
+    },
+    {
+        category: "科學知識",
+        question: "光速約為每秒？",
+        options: ["300 公里", "3000 公里", "3 萬公里", "30 萬公里"],
+        answer: 3
+    },
+    {
+        category: "科學知識",
+        question: "植物行光合作用需要？",
+        options: ["氧氣", "二氧化碳、水、陽光", "冰", "泥土"],
+        answer: 1
+    },
+    {
+        category: "科學知識",
+        question: "地震規模常用哪種單位？",
+        options: ["磅", "里氏規模", "伏特", "公頃"],
+        answer: 1
+    },
+    {
+        category: "科學知識",
+        question: "金屬之所以導電，是因為有？",
+        options: ["自由電子", "自由質子", "自由中子", "自由光子"],
+        answer: 0
+    },
+
+    // 289–300 交通安全 Traffic Safety
+    {
+        category: "交通安全",
+        question: "行人過馬路時最重要的是？",
+        options: ["滑手機", "左右確認安全", "快速衝過去", "閉眼祈禱"],
+        answer: 1
+    },
+    {
+        category: "交通安全",
+        question: "騎車時必須配戴安全帽的原因是？",
+        options: ["避免被罰款", "降低頭部受傷風險", "讓風不吹到臉", "更時尚"],
+        answer: 1
+    },
+    {
+        category: "交通安全",
+        question: "下雨天開車最需要注意？",
+        options: ["視線不佳與煞車距離變長", "可以更快開", "不用開燈", "輪胎不會打滑"],
+        answer: 0
+    },
+    {
+        category: "交通安全",
+        question: "酒駕最嚴重的危害是？",
+        options: ["車子變髒", "反應變慢，容易造成重大事故", "油耗變高", "引擎熄火"],
+        answer: 1
+    },
+    {
+        category: "交通安全",
+        question: "開車遇到行人於斑馬線上時應？",
+        options: ["按喇叭催促", "禮讓停下", "加速通過", "逼行人後退"],
+        answer: 1
+    },
+    {
+        category: "交通安全",
+        question: "哪一種行為最危險？",
+        options: ["穿亮色衣服騎車", "夜間無燈騎車", "遵守速限", "保持安全距離"],
+        answer: 1
+    },
+    {
+        category: "交通安全",
+        question: "若後車距離過近（貼車），應？",
+        options: ["煞車報復", "保持穩定速度、換到右側讓行", "按喇叭嗆聲", "猛然加速"],
+        answer: 1
+    },
+    {
+        category: "交通安全",
+        question: "哪一種情況最容易導致事故？",
+        options: ["疲勞駕駛", "遵守規則", "正常行駛", "慢速行走"],
+        answer: 0
+    },
+    {
+        category: "交通安全",
+        question: "轉彎前必須？",
+        options: ["亂按燈", "事先打方向燈", "忽略後方車", "不減速"],
+        answer: 1
+    },
+    {
+        category: "交通安全",
+        question: "下列何者屬於三寶行為？",
+        options: ["停讓行人", "逆向行駛", "不超速", "遵守燈號"],
+        answer: 1
+    },
+    {
+        category: "交通安全",
+        question: "若遇行人突然穿越馬路，駕駛應？",
+        options: ["加速躲過", "保持冷靜並減速或停車", "按喇叭逼退", "大幅度急轉方向盤"],
+        answer: 1
+    },
+    {
+        category: "交通安全",
+        question: "安全車距的原則是？",
+        options: ["貼越近越好", "至少保持 1–2 秒反應時間", "依心情調整", "車越快距離越短"],
+        answer: 1
     }
 ];
